@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --ink: #152136;
+  --muted: #5f6d82;
+  --paper: #f6f8fc;
+  --surface: #ffffff;
+  --line: #dce3ee;
+  --navy: #112b46;
+  --blue: #2563eb;
+  --cyan: #22d3ee;
+  --shadow: 0 18px 45px rgba(21, 33, 54, 0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: radial-gradient(circle at 8% 4%, rgba(34, 211, 238, 0.16), transparent 24rem), var(--paper);
+  font-family: "Space Grotesk", Arial, sans-serif;
+}
+
+a { color: var(--blue); }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 76px;
+  padding: 0.8rem max(5vw, 1.25rem);
+  background: rgba(17, 43, 70, 0.96);
+  box-shadow: 0 4px 16px rgba(17, 43, 70, 0.2);
+}
+
+.logo { margin: 0; font-size: clamp(1.2rem, 2vw, 1.55rem); }
+.logo a { color: white; text-decoration: none; letter-spacing: -0.05em; }
+.logo a::after { color: var(--cyan); content: "."; }
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  display: block;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0.45rem;
+  color: #eaf3ff;
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--cyan);
+}
+
+main {
+  width: min(1040px, 92%);
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+}
+
+.page-title {
+  margin: 0 0 2rem;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.page-title::after {
+  display: block;
+  width: 4rem;
+  height: 0.4rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  content: "";
+}
+
+/* Home */
+.about {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) 1.3fr;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 6px solid #e9faff;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.about-text p {
+  margin: 0;
+  color: #344256;
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  line-height: 1.8;
+}
+
+/* Portfolio */
+.project {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.project > a { min-height: 300px; }
+
+.project > a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.project > a:hover img { transform: scale(1.04); }
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.75rem, 4vw, 3rem);
+}
+
+.project-name { margin: 0 0 0.6rem; font-size: 1.55rem; font-weight: 700; }
+.project-description { margin: 0 0 1.5rem; color: var(--muted); line-height: 1.65; }
+
+.project-details a,
+.button {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--blue);
+  color: white;
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.project-details a:hover,
+.button:hover { background: var(--navy); transform: translateY(-2px); }
+
+/* Resume */
+.resume { display: grid; gap: 1.25rem; margin-top: 2rem; }
+
+.section {
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(21, 33, 54, 0.06);
+}
+
+.section-title { margin: 0 0 1.25rem; color: var(--navy); font-size: 1.35rem; }
+.entry + .entry { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.entry-title { margin: 0 0 0.35rem; font-size: 1.05rem; }
+
+.entry-info {
+  margin: 0;
+  color: var(--blue);
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.entry-description { margin: 0.75rem 0 0; color: var(--muted); line-height: 1.65; }
+
+.course-list,
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 2rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.45;
+}
+
+/* Contact */
+#contact-form {
+  width: min(100%, 620px);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+#contact-form br { display: none; }
+label { display: block; margin: 1.25rem 0 0.45rem; font-weight: 600; }
+label:first-child { margin-top: 0; }
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid #bfcadb;
+  border-radius: 0.5rem;
+  color: var(--ink);
+  background: #fbfcff;
+  font: inherit;
+}
+
+textarea { min-height: 150px; resize: vertical; }
+
+input:focus,
+textarea:focus { border-color: var(--blue); outline: 3px solid rgba(37, 99, 235, 0.16); }
+
+input[type="submit"] {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--blue);
+  color: white;
+  font: 500 0.85rem "DM Mono", monospace;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover { background: var(--navy); }
+
+.footer {
+  padding: 1.4rem 1rem;
+  background: var(--navy);
+  color: #dcecff;
+  text-align: center;
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  .navbar { align-items: flex-start; flex-direction: column; }
+  .nav-list { width: 100%; }
+  .about, .project { grid-template-columns: 1fr; }
+  .project > a { min-height: 220px; }
+  .course-list, .skill-list { grid-template-columns: 1fr; }
+}

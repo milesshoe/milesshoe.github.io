@@ -1,65 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Contact | Miles Schulist</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miles Schulist | Contact</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
-    <nav class="navbar">
-      <h1 class="logo"><a href="index.html">Miles Schulist</a></h1>
-
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
+    <nav class="navbar"><a class="logo" href="index.html">Miles<span>Schulist</span></a><ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Work</a></li><li><a href="resume.html">Resume</a></li><li><a href="blog.html">Notes</a></li><li><a class="nav-cta active" href="contact.html">Let's talk</a></li></ul></nav>
     <main>
-      <h1 class="page-title">Contact</h1>
-
-      <form id="contact-form">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your name"
-          required
-        />
-
-        <br><br>
-
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="your.email@example.com"
-          required
-        />
-
-        <br><br>
-
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Write your message here"
-          required
-        ></textarea>
-
-        <br><br>
-
-        <input type="submit" value="Submit" />
-      </form>
+      <section class="contact-layout">
+        <header class="contact-intro"><p class="eyebrow">Contact</p><h1 class="page-title">Let's make something <span>great.</span></h1><p>Have an idea, opportunity, or question? Send me a note and I'll get back to you soon.</p><a class="text-link" href="mailto:milesjschulist@gmail.com">milesjschulist@gmail.com <span>↗</span></a></header>
+        <form id="contact-form">
+          <label for="name">Your name</label><input type="text" id="name" name="name" placeholder="Jane Doe" required />
+          <label for="email">Email address</label><input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          <label for="message">What’s on your mind?</label><textarea id="message" name="message" placeholder="Tell me a little about it..." required></textarea>
+          <input type="submit" value="Send message →" />
+        </form>
+      </section>
     </main>
-
-    <footer class="footer">
-      © 2023 Miles Schulist | All Rights Reserved
-    </footer>
+    <footer class="footer"><p>© 2026 Miles Schulist</p><a href="index.html">Back home ↑</a></footer>
   </body>
 </html>
